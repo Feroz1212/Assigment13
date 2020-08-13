@@ -32,7 +32,6 @@ ref.once('value', function(snapshot) {
   console.log(childKey);
   console.log(childData);
 
-
       var tr=document.createElement("tr");
       var td1=document.createElement("td");
       var td2=document.createElement("td");
