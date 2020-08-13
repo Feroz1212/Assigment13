@@ -29,11 +29,11 @@ ref.once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
-  
+  console.log(childKey);
+  console.log(childData);
 
 
       var tr=document.createElement("tr");
-      var td=document.createElement("td");
       var td1=document.createElement("td");
       var td2=document.createElement("td");
       var td3=document.createElement("td");
@@ -42,7 +42,7 @@ ref.once('value', function(snapshot) {
       var edit = document.createElement("BUTTON");   
       edit.innerHTML = "EDIT";
       edit.value = childKey;
-      edit.className= "btn btn-info";  
+      edit.className= "btn btn-primary";  
       edit.onclick = function() {
       
         update(edit.value)
@@ -56,12 +56,10 @@ ref.once('value', function(snapshot) {
         deletes(del.value)
       };
             tbl.append(tr);
-            tr.append(td);
             tr.append(td1);
             tr.append(td2);
             tr.append(td3);
             tr.append(td4);
-            td.append(childKey);
             td1.append(childData.name);
             td2.append(childData.roll);
             td3.append(edit);
